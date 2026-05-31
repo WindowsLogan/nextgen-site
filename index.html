@@ -5,102 +5,111 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NextGen Diagnostics</title>
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Segoe UI,Arial,sans-serif;
-  background:#0f172a;
-  color:#e5e7eb;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#0b1120;color:#fff}
 .hero{
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  padding:70px 20px;
-  text-align:center;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#0b1120,#172554);
+padding:20px;
 }
-.logo-box{
-  width:180px;
-  height:180px;
-  margin:0 auto 25px;
-  border:3px dashed #60a5fa;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#93c5fd;
-  background:#111827;
+.logo{
+width:180px;height:180px;
+border:3px dashed #60a5fa;
+border-radius:20px;
+display:flex;align-items:center;justify-content:center;
+margin-bottom:25px;
+animation:float 3s ease-in-out infinite;
 }
-h1{font-size:3rem;margin:0}
-.tagline{font-size:1.2rem;color:#cbd5e1}
+h1{
+font-size:4rem;
+animation:slideUp 1s ease;
+}
+.subtitle{color:#cbd5e1;margin:10px 0 20px}
 .btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 24px;
-  background:#2563eb;
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
+background:#2563eb;color:white;
+padding:14px 28px;border-radius:10px;
+text-decoration:none;
+display:inline-block;
+animation:pulse 2s infinite;
 }
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:30px 20px;
-}
+.section{max-width:1200px;margin:auto;padding:60px 20px}
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 .card{
-  background:#1e293b;
-  border-radius:16px;
-  padding:20px;
-  box-shadow:0 4px 12px rgba(0,0,0,.25);
+background:#111827;
+padding:25px;
+border-radius:15px;
+transition:.3s;
+box-shadow:0 0 15px rgba(0,0,0,.3);
 }
-.price{
-  color:#60a5fa;
-  font-size:1.6rem;
-  font-weight:bold;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(96,165,250,.6);
 }
-.section-title{
-  text-align:center;
-  margin:40px 0 20px;
+.price{font-size:2rem;color:#60a5fa;margin:10px 0}
+ul{padding-left:18px;margin-top:10px}
+li{margin-bottom:8px}
+.banner{
+background:#2563eb;
+padding:20px;
+text-align:center;
+font-size:1.1rem;
 }
-.about, .contact{
-  background:#1e293b;
-  border-radius:16px;
-  padding:25px;
-  margin-top:25px;
+.about,.reviews,.contact{
+background:#111827;
+padding:25px;
+border-radius:15px;
+margin-top:25px;
 }
-footer{
-  text-align:center;
-  padding:30px;
-  background:#020617;
-  color:#94a3b8;
+footer{text-align:center;padding:30px;background:#020617;color:#94a3b8}
+
+@keyframes slideUp{
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:translateY(0)}
 }
-ul{padding-left:18px}
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.05)}
+}
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
 </style>
 </head>
 <body>
 
 <section class="hero">
-  <div class="logo-box">
-    YOUR LOGO HERE
-  </div>
-  <h1>NextGen Diagnostics</h1>
-  <p class="tagline">Mobile Vehicle Diagnostics & Health Checks</p>
-  <p>Tonbridge, Kent</p>
-  <a class="btn" href="mailto:info@nextgendiagnostics.co.uk">Book Now</a>
+<div class="logo">YOUR LOGO</div>
+<h1>NextGen Diagnostics</h1>
+<p class="subtitle">Mobile Vehicle Diagnostics & Health Checks • Tonbridge, Kent</p>
+<a class="btn" href="mailto:info@nextgendiagnostics.co.uk">Book Now</a>
+  <a class="btn facebook-btn" href="https://facebook.com/YOURPAGE" target="_blank">
+📘 Facebook Page
+</a>
 </section>
 
-<div class="container">
+<div class="banner">
+ 🚗 Mobile Call-Out Service • 💷 No Fault Codes Found = No Fee
+</div>
 
-<h2 class="section-title">Services & Pricing</h2>
+<section class="section">
+<h2 style="text-align:center;margin-bottom:30px">Services & Pricing</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Vehicle Fault Scan</h3>
-<p class="price">£25</p>
+<h3>🎓 Student Fault Scan</h3>
+<div class="price">£20</div>
+<p>Valid Student ID Required</p>
 <ul>
 <li>Read fault codes</li>
 <li>Explain findings</li>
@@ -110,8 +119,19 @@ ul{padding-left:18px}
 </div>
 
 <div class="card">
+<h3>Vehicle Fault Scan</h3>
+<div class="price">£25</div>
+<ul>
+<li>Read fault codes</li>
+<li>Check pending codes</li>
+<li>Explain findings</li>
+<li>Clear codes on request</li>
+</ul>
+</div>
+
+<div class="card">
 <h3>Fault Scan + Report</h3>
-<p class="price">£28</p>
+<div class="price">£28</div>
 <ul>
 <li>Fault scan</li>
 <li>Live data review</li>
@@ -122,7 +142,7 @@ ul{padding-left:18px}
 
 <div class="card">
 <h3>MOT Readiness Check</h3>
-<p class="price">£28</p>
+<div class="price">£28</div>
 <ul>
 <li>Readiness monitor check</li>
 <li>Emissions status</li>
@@ -133,7 +153,7 @@ ul{padding-left:18px}
 
 <div class="card">
 <h3>Vehicle Health Check</h3>
-<p class="price">£35</p>
+<div class="price">£35</div>
 <ul>
 <li>Diagnostic scan</li>
 <li>Battery health test</li>
@@ -144,7 +164,7 @@ ul{padding-left:18px}
 
 <div class="card">
 <h3>Pre-Purchase Scan</h3>
-<p class="price">£40</p>
+<div class="price">£40</div>
 <ul>
 <li>Full diagnostic scan</li>
 <li>Battery check</li>
@@ -157,21 +177,27 @@ ul{padding-left:18px}
 </div>
 
 <div class="about">
-<h2>About NextGen Diagnostics</h2>
-<p>Professional mobile vehicle diagnostics based in Tonbridge, Kent. We provide fault code scanning, MOT readiness checks, vehicle health checks and pre-purchase inspections at affordable prices.</p>
+<h2>Why Choose NextGen Diagnostics?</h2>
+<p>Professional mobile diagnostics based in Tonbridge. Affordable pricing, convenient call-outs and honest reporting. Ideal for warning lights, MOT preparation and used vehicle checks.</p>
+</div>
+
+<div class="reviews">
+<h2>Customer Reviews</h2>
+<p>⭐⭐⭐⭐⭐ Review coming soon...</p>
+<p>⭐⭐⭐⭐⭐ Review coming soon...</p>
 </div>
 
 <div class="contact">
-<h2>Contact Us</h2>
+<h2>Contact</h2>
 <p>📍 Tonbridge, Kent</p>
 <p>📧 info@nextgendiagnostics.co.uk</p>
-<p>🚗 Mobile Call-Out Service Available</p>
+<p>📱 WhatsApp Booking Available</p>
 </div>
 
-</div>
+</section>
 
 <footer>
-© 2026 NextGen Diagnostics | Mobile Vehicle Diagnostics & Health Checks
+© 2026 NextGen Diagnostics
 </footer>
 
 </body>
